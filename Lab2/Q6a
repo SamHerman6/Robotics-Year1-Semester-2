@@ -1,0 +1,100 @@
+/*
+Go in a square and return to orignal positon
+*/
+
+int leftMotor = 1;
+int rightMotor = 2;
+
+void squareturn();
+
+task main()
+{ //start task main
+    
+squareturn();
+
+} //end task main
+
+void squareturn()
+{ //start squareturn
+
+	// Move forward at half power for 1.25 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 50); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(1250);			//Wait for 1.5 seconds before continuing on in the program.
+
+    	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+    	// Turn left at half power for 1 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 0); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(760);			//Wait for 1.5 seconds before continuing on in the program.
+
+    // Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+    	// Move forward at half power for 1.25 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 50); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(1250);			//Wait for 1.5 seconds before continuing on in the program.
+
+        	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+        	// Turn left at half power for 1 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 0); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(760);			//Wait for 1.5 seconds before continuing on in the program.
+
+            	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+    // Move forward at half power for 1.25 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 50); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(1250);			//Wait for 1.5 seconds before continuing on in the program.
+
+                	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+            	// Turn left at half power for 1 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 0); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(760);			//Wait for 1.5 seconds before continuing on in the program.
+
+            	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+    // Move forward at half power for 1.25 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 50); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(1250);			//Wait for 1.5 seconds before continuing on in the program.
+
+                	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+    // Turn left at half power for 1 seconds
+	setMotorSpeed(leftMotor, 50);	//Set the leftMotor (motor1) to half power forward (50)
+	setMotorSpeed(rightMotor , 0); 	//Set the rightMotor (motor2) to half power forward (50)
+	sleep(760);			//Wait for 1.5 seconds before continuing on in the program.
+
+            	// Stop for 1 second
+	setMotorSpeed(leftMotor, 0);	//Set the leftMotor (motor1) to Off
+	setMotorSpeed(rightMotor , 0);  	//Set the rightMotor (motor2) to Off
+	sleep(1000);			//Wait for 1 second before continuing on in the program.
+
+} //end squareturn
