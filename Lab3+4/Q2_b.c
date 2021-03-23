@@ -1,13 +1,13 @@
 /*
-Lab 3 - Q6a
-Turn to complete a square and return to origin position,
+To go foward (at 100%) for 100 cm and do 180 degrees turn and return at 25% speed
+Lab:3/4
 */
-#define rotations 208.09 //10cm
+#define rotations 2080.92
 
 int leftMotor = 1;
 int rightMotor = 2;
 
-void straight_10cm(int speed, int target)
+void straight_100cm(int speed, int target)
 {
 	//NEED RESETS SINCE setMotorTarget() is to ABSOLUTE TARGET
 	resetMotorEncoder(leftMotor);//since setMotorTarget is ABSOLUTE
@@ -21,37 +21,24 @@ void straight_10cm(int speed, int target)
 	return;
 }
 
-void turn90degreesLeft(void)
+void turn180degreesLeft(void)
 { //start turn90left
 
     setMotorSpeed(leftMotor,90);
     setMotorSpeed(rightMotor,0);
 
-    sleep (420);
+    sleep (835);
 }
-
-
 
 task main()
 {
 	int i;
-	straight_10cm(50, rotations);
+	straight_100cm(100, rotations);
     sleep(100);
-    turn90degreesLeft();
-
-    straight_10cm(50, rotations);
+    turn180degreesLeft();
+   
+    straight_100cm(50, rotations);
     sleep(100);
-    turn90degreesLeft();
-	sleep(10);
-
-    straight_10cm(50, rotations);
-    sleep(100);
-    turn90degreesLeft();
-	sleep(15);
-
-    straight_10cm(50, rotations);
-    sleep(100);
-    turn90degreesLeft();
-	sleep(20);
-
+    turn180degreesLeft();
+    sleep (20);
 }
