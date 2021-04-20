@@ -25,7 +25,7 @@ void straight_Ncm(int speed, int target) //function to go foward with assigned t
 void gyro_left() // 90 degrees turn
 {	
 	int count=0;
-	int degrees;
+	int degrees = 90;
 	int heading;
 	int rate;
 

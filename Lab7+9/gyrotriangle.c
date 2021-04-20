@@ -22,10 +22,10 @@ void straight_Ncm(int speed, int target) //function to go foward with assigned t
 	return;
 } // end straight_Ncm()
 
-void gyro_left() // 90 degrees turn
+void gyro_left() // 60 degrees turn
 {	
 	int count=0;
-	int degrees;
+	int degrees = 60;
 	int heading;
 	int rate;
 
