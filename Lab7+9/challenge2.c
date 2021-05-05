@@ -2,6 +2,7 @@ int leftMotor = 1;
 int rightMotor = 2; 
 
 void gyro_left(); // 90 degrees turn
+void gyro_left_2();
 
 task main()
 {
@@ -41,13 +42,6 @@ task main()
 	
 	gyro_left();
 	
-/*
-		// Turn left 
-		setMotorSpeed(leftMotor, 37);	//Set the leftMotor (motor1) to 30
-		setMotorSpeed(rightMotor, -10);	//Set the rightMotor (motor2) to -5
-		sleep(1000);	//Wait for 1 sec before continuing on in the program.
-		*/	
-	
 	
 	while(SensorValue[S2] == 0)	//go forward until bump sensor is activated
 	{
@@ -62,14 +56,6 @@ task main()
 	
 	gyro_left();
 	
-/*
-		// Turn left 
-		setMotorSpeed(leftMotor, 31);	//Set the leftMotor (motor1) to 30
-		setMotorSpeed(rightMotor, -28);	//Set the rightMotor (motor2) to -29
-		sleep(1000);	//Wait for 1 sec before continuing on in the program.
-		*/	
-	
-	
 	while (SensorValue[S2] == 0 && SensorValue[S1] > 22) //go forward until bump sensor is activated or ultrasonic sensor is below 22
 	{
 		setMotorSpeed(leftMotor, 100);
@@ -82,13 +68,6 @@ task main()
 	sleep(2000);
 	
 	gyro_left();
-	
-/*
-		//Turn left 
-		setMotorSpeed(leftMotor, 30);	//Set the leftMotor (motor1) to 28
-		setMotorSpeed(rightMotor, -5);	//Set the rightMotor (motor2) to -5
-		sleep(1000);	//Wait for 1 sec before continuing on in the program.
-		*/	
 	
 	//Move Forward
 	setMotorSpeed(leftMotor, 50);	//Set motorspeed to half power forward
@@ -103,18 +82,45 @@ task main()
 void gyro_left() // 90 degrees turn
 {	
 	int count=0;
-	int degrees = 90;
-	int heading;
-	int rate;
+	int degrees =0;
+	int heading= 0;
+	int rate= 0;
 	
 	motor[1]=+25;
 	motor[2]=-25;
-	while(count<24)
+	
+	while(degrees<98)
 	{	degrees = getGyroDegrees(S3);
 		heading = getGyroHeading(S3);
 		rate = getGyroRate(S3);
 		count++;
-		sleep(40);	
+		sleep(15);
 	}
+	
+	resetGyro(S3); // RESET GYRO
+	
+	return;
+} // end gyro_left()
+
+void gyro_left_2() // 90 degrees turn
+{	
+	int count=0;
+	int degrees =0;
+	int heading= 0;
+	int rate= 0;
+	
+	motor[1]=+25;
+	motor[2]=-25;
+	
+	while(degrees<98)
+	{	degrees = getGyroDegrees(S3);
+		heading = getGyroHeading(S3);
+		rate = getGyroRate(S3);
+		count++;
+		sleep(15);
+	}
+	
+	resetGyro(S3); // RESET GYRO
+	
 	return;
 } // end gyro_left()

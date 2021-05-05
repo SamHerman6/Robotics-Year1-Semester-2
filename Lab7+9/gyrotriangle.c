@@ -8,6 +8,7 @@ int rotations_4 = (360/17.3)*80; // 80cm = 1664.74
 int leftMotor = 1;
 int rightMotor = 2;
 
+
 void straight_Ncm(int speed, int target) //function to go foward with assigned target distance
 {
 	//NEED RESETS SINCE setMotorTarget() is to ABSOLUTE TARGET
@@ -22,29 +23,56 @@ void straight_Ncm(int speed, int target) //function to go foward with assigned t
 	return;
 } // end straight_Ncm()
 
-void gyro_left() // 60 degrees turn
+void gyro_left() // 90 degrees turn
 {	
 	int count=0;
-	int degrees = 60;
-	int heading;
-	int rate;
+	int degrees =0;
+	int heading= 0;
+	int rate= 0;
+	
+	motor[1]=+25;
+	motor[2]=-25;
 
-	motor[1]=+55;
-	motor[2]=-55;
-	while(count<20)
+	while(degrees<105)
 	{	degrees = getGyroDegrees(S1);
 		heading = getGyroHeading(S1);
 		rate = getGyroRate(S1);
 		count++;
-		sleep(18);	
+		sleep(15);
 	}
-    return;
+
+	resetGyro(S1); // RESET GYRO
+
+	return;
+} // end gyro_left()
+
+void gyro_left_2() // 90 degrees turn
+{	
+	int count=0;
+	int degrees =0;
+	int heading= 0;
+	int rate= 0;
+	
+	motor[1]=+25;
+	motor[2]=-25;
+
+	while(degrees<114)
+	{	degrees = getGyroDegrees(S1);
+		heading = getGyroHeading(S1);
+		rate = getGyroRate(S1);
+		count++;
+		sleep(15);
+	}
+
+	resetGyro(S1); // RESET GYRO
+
+	return;
 } // end gyro_left()
 
 task main()
 {
 	SensorType[S1]= sensorEV3_Gyro;
-
+	
 	while(1<100) //infinite loop
 	{
 		//While the left button (1) is pressed
@@ -52,87 +80,87 @@ task main()
 		{
 			straight_Ncm(100, rotations_1); //foward 10cm
 			sleep(100);
-
+			
 			gyro_left(); // 90 degrees turn
 			sleep(100);
-
-			straight_Ncm(100, rotations_1);
-			sleep(100);
-
-			gyro_left();
-			sleep(100);
-
-			straight_Ncm(100, rotations_1);
-			sleep(100);
-
-			gyro_left();
-			sleep(30);
-		}
 			
+			straight_Ncm(100, rotations_1);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);
+			
+			straight_Ncm(100, rotations_1);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);	
+		}
+		
 		//While the left button (2) is pressed
 		else if(getButtonPress(buttonRight))
 		{
 			straight_Ncm(100, rotations_2); //foward 40cm
 			sleep(100);
-
-			gyro_left();
-			sleep(100);
-
-			straight_Ncm(100, rotations_2);
-			sleep(100);
-
-			gyro_left();
-			sleep(100);
-
-			straight_Ncm(100, rotations_2);
-			sleep(100);
-
-			gyro_left();
-			sleep(30);
-		}
 			
+			gyro_left();
+			sleep(100);
+			
+			straight_Ncm(100, rotations_2);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);
+			
+			straight_Ncm(100, rotations_2);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);	
+		}
+		
 		//While the left button (3) is pressed
 		else if(getButtonPress(buttonUp))
 		{
 			straight_Ncm(100, rotations_3); //foward 60cm
 			sleep(100);
-
-			gyro_left();
-			sleep(100);
-
-			straight_Ncm(100, rotations_3);
-			sleep(100);
-
-			gyro_left();
-			sleep(100);
-
-			straight_Ncm(100, rotations_3);
-			sleep(100);
-
-			gyro_left();
-			sleep(19);
-		}
 			
+			gyro_left();
+			sleep(100);
+			
+			straight_Ncm(100, rotations_3);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);
+			
+			straight_Ncm(100, rotations_3);
+			sleep(100);
+			
+			gyro_left_2();
+			sleep(100);
+		}
+		
 		//While the left button (4) is pressed
 		else if(getButtonPress(buttonDown))
 		{
 			straight_Ncm(100, rotations_4); //foward 80cm
 			sleep(100);
-
+			
 			gyro_left();
 			sleep(100);
-
+			
 			straight_Ncm(100, rotations_4);
 			sleep(100);
-
-			gyro_left();
+			
+			gyro_left_2();
 			sleep(100);
-
+			
 			straight_Ncm(100, rotations_4);
 			sleep(100);
-
-			gyro_left();
-			sleep(20);
+			
+			gyro_left_2();
+			sleep(100);
 		}
 		else
 		{
